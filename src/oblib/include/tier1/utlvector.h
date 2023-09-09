@@ -2,11 +2,11 @@
 
 
 #include <string.h>
-#include "SDK/platform.h"
-#include "SDK/threadtools.h"
-#include "SDK/utlmemory.h"
-#include "SDK/utlblockmemory.h"
-#include "SDK/strtools.h"
+#include "tier0/platform.h"
+#include "tier0/threadtools.h"
+#include "tier1/utlmemory.h"
+#include "tier1/utlblockmemory.h"
+#include "tier1/strtools.h"
 
 #define FOR_EACH_VEC( vecName, iteratorName ) \
 	for ( int iteratorName = 0; iteratorName < vecName.Count(); iteratorName++ )

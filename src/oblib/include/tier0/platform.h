@@ -7,6 +7,8 @@ inline void Error(const char* msg)
 
 }
 
+inline bool IsPC() { return true; }
+
 #ifndef _WIN32
 inline void* _aligned_malloc(size_t size, size_t alignment)
 {

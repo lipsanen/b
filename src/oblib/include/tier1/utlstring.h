@@ -1,7 +1,7 @@
 #pragma once
 
-#include "SDK/strtools.h"
-#include "SDK/utlmemory.h"
+#include "tier1/strtools.h"
+#include "tier1/utlmemory.h"
 #include "limits.h"
 
 //-----------------------------------------------------------------------------

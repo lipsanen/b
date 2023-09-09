@@ -1,7 +1,7 @@
 #pragma once
 
 #include <string.h>
-#include "SDK/platform.h"
+#include "tier0/platform.h"
 
 #ifdef _MSC_VER
 #pragma warning (disable:4100)

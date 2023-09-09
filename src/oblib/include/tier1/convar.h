@@ -1,8 +1,8 @@
 #pragma once
 
 #include <cstddef>
-#include "SDK/utlstring.h"
-#include "SDK/utlvector.h"
+#include "tier1/utlstring.h"
+#include "tier1/utlvector.h"
 
 #define FORCEINLINE_CVAR inline
 

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "SDK/platform.h"
+#include "tier0/platform.h"
 #include "mathlib/mathlib.h"
 
 #ifdef _MSC_VER
