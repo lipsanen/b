@@ -63,9 +63,20 @@ wchar_t*	_V_wcsupr (const char* file, int line, wchar_t *start);
 // ASCII-optimized functions which fall back to CRT only when necessary
 char *V_strupr( char *start );
 char *V_strlower( char *start );
-int V_stricmp( const char *s1, const char *s2 );
 int	V_strncmp( const char *s1, const char *s2, int count );
 int V_strnicmp( const char *s1, const char *s2, int n );
+
+inline int Q_stricmp(const char *a, const char *b) {
+  int ca, cb;
+  do {
+     ca = (unsigned char) *a++;
+     cb = (unsigned char) *b++;
+     ca = tolower(toupper(ca));
+     cb = tolower(toupper(cb));
+   } while (ca == cb && ca != '\0');
+   return ca - cb;
+}
+
 
 #ifdef POSIX
 
@@ -147,7 +158,7 @@ char*		V_stristr( char* pStr, const char* pSearch );
 const char*	V_stristr( const char* pStr, const char* pSearch );
 const char*	V_strnistr( const char* pStr, const char* pSearch, int n );
 const char*	V_strnchr( const char* pStr, char c, int n );
-inline int V_strcasecmp (const char *s1, const char *s2) { return V_stricmp(s1, s2); }
+inline int V_strcasecmp (const char *s1, const char *s2) { return Q_stricmp(s1, s2); }
 inline int V_strncasecmp (const char *s1, const char *s2, int n) { return V_strnicmp(s1, s2, n); }
 void		V_qsort_s( void *base, size_t num, size_t width, int (*compare )(void *, const void *,
 const void *), void *context );
@@ -818,15 +829,14 @@ size_t Q_URLDecode( OUT_CAP(nDecodeDestLen) char *pchDecodeDest, int nDecodeDest
 #define Q_strrchr				V_strrchr
 #define Q_strcmp				V_strcmp
 #define Q_wcscmp				V_wcscmp
-#define Q_stricmp				V_stricmp
 #define Q_strstr				V_strstr
 #define Q_strupr				V_strupr
 #define Q_strlower				V_strlower
 #define Q_wcslen				V_wcslen
-#define	Q_strncmp				V_strncmp 
+#define	Q_strncmp				strncmp 
 #define	Q_strcasecmp			V_strcasecmp
 #define	Q_strncasecmp			V_strncasecmp
-#define	Q_strnicmp				V_strnicmp
+#define	Q_strnicmp				strnicmp
 #define	Q_atoi					V_atoi
 #define	Q_atoi64				V_atoi64
 #define Q_atoui64				V_atoui64
@@ -835,12 +845,12 @@ size_t Q_URLDecode( OUT_CAP(nDecodeDestLen) char *pchDecodeDest, int nDecodeDest
 #define	Q_strnistr				V_strnistr
 #define	Q_strnchr				V_strnchr
 #define Q_normalizeFloatString	V_normalizeFloatString
-#define Q_strncpy				V_strncpy
-#define Q_snprintf				V_snprintf
+#define Q_strncpy				strncpy
+#define Q_snprintf				snprintf
 #define Q_wcsncpy				V_wcsncpy
 #define Q_strncat				V_strncat
 #define Q_strnlwr				V_strnlwr
-#define Q_vsnprintf				V_vsnprintf
+#define Q_vsnprintf				vsnprintf
 #define Q_vsnprintfRet			V_vsnprintfRet
 #define Q_pretifymem			V_pretifymem
 #define Q_pretifynum			V_pretifynum

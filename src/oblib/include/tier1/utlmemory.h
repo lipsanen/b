@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string.h>
+#include "osplib/utils.h"
 #include "tier0/platform.h"
 
 #ifdef _MSC_VER

@@ -7,6 +7,8 @@ class IServerEntity;
 class IServerNetworkable;
 class IServerUnknown;
 
+struct edict_t;
+
 class IChangeInfoAccessor
 {
 public:

@@ -2,8 +2,8 @@
 
 #include <cstddef>
 #include "osplib/utils.h"
-#include "SDK/convar.h"
-#include "SDK/edict.h"
+#include "tier1/convar.h"
+#include "edict.h"
 
 typedef enum 
 {
