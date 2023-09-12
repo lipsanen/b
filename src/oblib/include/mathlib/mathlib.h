@@ -2,6 +2,7 @@
 
 #include "osplib/utils.h"
 #include "tier0/basetypes.h"
+#include <algorithm>
 #include <math.h>
 #include "mathlib/vector.h"
 #include "mathlib/vector2d.h"
@@ -314,7 +315,7 @@ void inline SinCos( float radians, float *sine, float *cosine )
 {
 #if defined( _X360 )
 	XMScalarSinCos( sine, cosine, radians );
-#elif defined( _WIN32 )
+#elif defined( _MSC_VER )
 	_asm
 	{
 		fld		DWORD PTR [radians]
@@ -326,14 +327,9 @@ void inline SinCos( float radians, float *sine, float *cosine )
 		fstp DWORD PTR [edx]
 		fstp DWORD PTR [eax]
 	}
-#elif defined( _LINUX )
-	register double __cosr, __sinr;
- 	__asm __volatile__
-    		("fsincos"
-     	: "=t" (__cosr), "=u" (__sinr) : "0" (radians));
-
-  	*sine = __sinr;
-  	*cosine = __cosr;
+#else
+	*sine = std::sin(radians);
+	*cosine = std::cos(radians);
 #endif
 }
 
@@ -374,7 +370,7 @@ FORCEINLINE T Square( T const &a )
 }
 
 
-FORCEINLINE bool IsPowerOfTwo( uint x )
+FORCEINLINE bool IsPowerOfTwo( uint32_t x )
 {
 	return ( x & ( x - 1 ) ) == 0;
 }
@@ -383,7 +379,7 @@ FORCEINLINE bool IsPowerOfTwo( uint x )
 // returns 0 if x == 0 or x > 0x80000000 (ie numbers that would be negative if x was signed)
 // NOTE: the old code took an int, and if you pass in an int of 0x80000000 casted to a uint,
 //       you'll get 0x80000000, which is correct for uints, instead of 0, which was correct for ints
-FORCEINLINE uint SmallestPowerOfTwoGreaterOrEqual( uint x )
+FORCEINLINE uint32_t SmallestPowerOfTwoGreaterOrEqual( uint32_t x )
 {
 	x -= 1;
 	x |= x >> 1;
@@ -395,7 +391,7 @@ FORCEINLINE uint SmallestPowerOfTwoGreaterOrEqual( uint x )
 }
 
 // return the largest power of two <= x. Will return 0 if passed 0
-FORCEINLINE uint LargestPowerOfTwoLessThanOrEqual( uint x )
+FORCEINLINE uint32_t LargestPowerOfTwoLessThanOrEqual( uint32_t x )
 {
 	if ( x >= 0x80000000 )
 		return 0x80000000;
@@ -1061,108 +1057,46 @@ inline float SimpleSplineRemapValClamped( float val, float A, float B, float C, 
 
 FORCEINLINE int RoundFloatToInt(float f)
 {
-#if defined( _X360 )
-#ifdef Assert
-	Assert( IsFPUControlWordSet() );
-#endif
-	union
-	{
-		double flResult;
-		int pResult[2];
-	};
-	flResult = __fctiw( f );
-	return pResult[1];
-#else // !X360
+#if defined( _MSC_VER )
 	int nResult;
-#if defined( _WIN32 )
 	__asm
 	{
 		fld f
 		fistp nResult
 	}
-#elif _LINUX
-	__asm __volatile__ (
-		"fistpl %0;": "=m" (nResult): "t" (f) : "st"
-	);
-#endif
 	return nResult;
+#else
+	return std::round(f);
 #endif
 }
 
 FORCEINLINE unsigned char RoundFloatToByte(float f)
 {
-#if defined( _X360 )
-#ifdef Assert
-	Assert( IsFPUControlWordSet() );
-#endif
-	union
-	{
-		double flResult;
-		int pIntResult[2];
-		unsigned char pResult[8];
-	};
-	flResult = __fctiw( f );
-#ifdef Assert
-	Assert( pIntResult[1] >= 0 && pIntResult[1] <= 255 );
-#endif
-	return pResult[8];
-
-#else // !X360
-	
+#if defined( _MSC_VER )
 	int nResult;
-
-#if defined( _WIN32 )
 	__asm
 	{
 		fld f
 		fistp nResult
 	}
-#elif _LINUX
-	__asm __volatile__ (
-		"fistpl %0;": "=m" (nResult): "t" (f) : "st"
-	);
-#endif
-
-#ifdef Assert
-	Assert( nResult >= 0 && nResult <= 255 );
-#endif 
 	return nResult;
-
+#else
+	return std::round(f);
 #endif
 }
 
 FORCEINLINE unsigned long RoundFloatToUnsignedLong(float f)
 {
-#if defined( _X360 )
-#ifdef Assert
-	Assert( IsFPUControlWordSet() );
-#endif
-	union
-	{
-		double flResult;
-		int pIntResult[2];
-		unsigned long pResult[2];
-	};
-	flResult = __fctiw( f );
-	Assert( pIntResult[1] >= 0 );
-	return pResult[1];
-#else  // !X360
-	
+#if defined( _MSC_VER )
 	unsigned char nResult[8];
-
-#if defined( _WIN32 )
 	__asm
 	{
 		fld f
 		fistp       qword ptr nResult
 	}
-#elif _LINUX
-	__asm __volatile__ (
-		"fistpl %0;": "=m" (nResult): "t" (f) : "st"
-	);
-#endif
-
 	return *((unsigned long*)nResult);
+#else
+	return std::round(f);
 #endif
 }
 
@@ -1181,7 +1115,7 @@ FORCEINLINE int Float2Int( float a )
 	
 	int RetVal;
 
-#if defined( _WIN32 )
+#if defined( _MSC_VER )
 	int CtrlwdHolder;
 	int CtrlwdSetter;
 	__asm 
@@ -1196,7 +1130,7 @@ FORCEINLINE int Float2Int( float a )
 		fistp  RetVal				// Store and converted (to int) result
 		fldcw  CtrlwdHolder		// Restore control word
 	}
-#elif _LINUX
+#else
 	RetVal = static_cast<int>( a );
 #endif
 
@@ -1211,7 +1145,7 @@ inline int Floor2Int( float a )
 
 #if defined( _X360 )
 	RetVal = (int)floor( a );
-#elif defined( _WIN32 )
+#elif defined( _MSC_VER )
    int CtrlwdHolder;
    int CtrlwdSetter;
    __asm 
@@ -1226,7 +1160,7 @@ inline int Floor2Int( float a )
       fistp  RetVal				// Store floored and converted (to int) result
       fldcw  CtrlwdHolder		// Restore control word
    }
-#elif _LINUX
+#else
 	RetVal = static_cast<int>( floor(a) );
 #endif
 
@@ -1269,7 +1203,7 @@ inline int Ceil2Int( float a )
 
 #if defined( _X360 )
 	RetVal = (int)ceil( a );
-#elif defined( _WIN32 )
+#elif defined( _MSC_VER )
    int CtrlwdHolder;
    int CtrlwdSetter;
    __asm 
@@ -1284,7 +1218,7 @@ inline int Ceil2Int( float a )
       fistp  RetVal				// Store floored and converted (to int) result
       fldcw  CtrlwdHolder		// Restore control word
    }
-#elif _LINUX
+#else
 	RetVal = static_cast<int>( ceil(a) );
 #endif
 

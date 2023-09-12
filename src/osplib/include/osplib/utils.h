@@ -9,6 +9,6 @@
 
 #define Assert(expression) OSP_ASSERT(expression, #expression)
 
-#ifndef _MSC_VER
-#define __cdecl __attribute__((cdecl))
+#ifndef _WIN32
+#define __cdecl 
 #endif

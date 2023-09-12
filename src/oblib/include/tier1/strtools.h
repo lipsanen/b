@@ -152,7 +152,7 @@ inline char*	V_strstr( const char *s1, const char *search )		{ return (char*)str
 
 int			V_atoi (const char *str);
 int64_t 		V_atoi64(const char *str);
-u_int64_t 		V_atoui64(const char *str);
+uint64_t 		V_atoui64(const char *str);
 float		V_atof (const char *str);
 char*		V_stristr( char* pStr, const char* pSearch );
 const char*	V_stristr( const char* pStr, const char* pSearch );
@@ -372,7 +372,7 @@ bool Q_RemoveAllEvilCharacters( char *pch );
 // would put "ffffffff" into buffer (note null terminator!!!)
 unsigned char V_nibble( char c );
 void V_hextobinary( char const *in, int numchars, uint8_t *out, int maxoutputbytes );
-void V_binarytohex( const u_int8_t *in, int inputbytes, char *out, int outsize );
+void V_binarytohex( const uint8_t *in, int inputbytes, char *out, int outsize );
 
 // Tools for working with filenames
 // Extracts the base name of a file (no path, no extension, assumes '/' or '\' as path separator)
