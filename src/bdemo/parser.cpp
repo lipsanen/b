@@ -271,8 +271,8 @@ void bdemo::free_message(demomessage_t* msg)
 
 demo_t::~demo_t()
 {
-    for(demomessage_t& msg : m_vec_messages);
-    //    std::visit([](auto& arg) { arg.destroy(); }, msg);
+    for(demomessage_t& msg : m_vec_messages)
+        std::visit([](auto& arg) { arg.destroy(); }, msg);
 }
 
 template<typename T>
