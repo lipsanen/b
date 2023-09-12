@@ -12,3 +12,6 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON CACHE INTERNAL "")
 endif()
 
 add_subdirectory(src)
+add_subdirectory(thirdparty/googletest)
+add_subdirectory(test/bdemo_tests)
+add_subdirectory(tools)

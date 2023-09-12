@@ -1,4 +1,5 @@
- 
+add_subdirectory(bdemo)
+
 list(APPEND PLUGIN_SOURCES
  "plugin.cpp"
 )
