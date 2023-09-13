@@ -10,7 +10,17 @@ static void printf_wrapper(const char* msg, ...)
     va_end(a_list);
 }
 
-PrintFunc tier0::AssertMsg = printf_wrapper;
+void tier0::AssertMsg(int b, const char* msg, ...)
+{
+    if(!b)
+    {   
+        va_list a_list;
+        va_start(a_list, msg);
+        vprintf(msg, a_list);
+        va_end(a_list);
+    }
+}
+
 PrintFunc tier0::ConMsg = printf_wrapper;
 PrintFunc tier0::Msg = printf_wrapper;
 PrintFunc tier0::Warning = printf_wrapper;
