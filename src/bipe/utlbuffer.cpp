@@ -18,7 +18,7 @@
 #include "tier1/characterset.h"
 
 
-namespace bob
+namespace bipe
 {
 	//-----------------------------------------------------------------------------
 	// Character conversions for C strings
@@ -1738,6 +1738,6 @@ namespace bob
 
 		return pszLine;
 	}
-}
 
+}
 

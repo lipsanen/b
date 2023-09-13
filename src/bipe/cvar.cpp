@@ -16,8 +16,8 @@
 #include "tier1/strtools.h"
 #include "tier1/utlbuffer.h"
 
-int bob::s_nDLLIdentifier = 314;
-ICvar* bob::g_pCVar = nullptr;
+int bipe::s_nDLLIdentifier = 314;
+ICvar* bipe::g_pCVar = nullptr;
 
 //-----------------------------------------------------------------------------
 // Purpose: Default constructor
@@ -207,7 +207,7 @@ static characterset_t s_BreakSet;
 static bool s_bBuiltBreakSet = false;
 
 //-----------------------------------------------------------------------------
-void bob::CharacterSetBuild( characterset_t *pSetBuffer, const char *pszSetString )
+void bipe::CharacterSetBuild( characterset_t *pSetBuffer, const char *pszSetString )
 {
 	int i = 0;
 
