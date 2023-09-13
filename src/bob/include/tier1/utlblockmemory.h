@@ -13,8 +13,6 @@
 #define UTLMEMORY_TRACK_ALLOC()		((void)0)
 #define UTLMEMORY_TRACK_FREE()		((void)0)
 
-using namespace bob;
-
 namespace bob
 {
 	//-----------------------------------------------------------------------------
@@ -326,3 +324,5 @@ namespace bob
 		ChangeSize( nBlocks );
 	}
 }
+
+using namespace bob;

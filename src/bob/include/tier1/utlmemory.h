@@ -13,8 +13,6 @@
 #define UTLMEMORY_TRACK_FREE()		((void)0)
 #define MEM_ALLOC_CREDIT_CLASS() ((void)0)
 
-using namespace bob;
-
 namespace bob
 {
 	//-----------------------------------------------------------------------------
@@ -901,3 +899,5 @@ namespace bob
 		}
 	}
 }
+
+using namespace bob;

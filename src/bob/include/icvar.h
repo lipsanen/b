@@ -3,8 +3,6 @@
 #include "appframework/IAppSystem.h"
 #include "tier1/iconvar.h"
 
-using namespace bob;
-
 namespace bob
 {
     class ConCommandBase;
@@ -107,3 +105,5 @@ namespace bob
     //-----------------------------------------------------------------------------
     extern ICvar *g_pCVar;
 }
+
+using namespace bob;

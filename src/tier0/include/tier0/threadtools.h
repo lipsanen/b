@@ -6,9 +6,7 @@
 
 #include <cstdint>
 
-using namespace bob;
-
-namespace bob
+namespace tier0
 {
 	class CThreadFastMutex
 	{
@@ -62,3 +60,5 @@ namespace bob
 		int				m_depth;
 	};
 }
+
+using namespace tier0;

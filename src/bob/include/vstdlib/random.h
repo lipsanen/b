@@ -71,3 +71,5 @@ namespace bob
 
 	int RandomInt( int iMinVal, int iMaxVal );
 }
+
+using namespace bob;

@@ -168,3 +168,5 @@ namespace bob
         bool		m_bLoadAttempted;
     };
 }
+
+using namespace bob;

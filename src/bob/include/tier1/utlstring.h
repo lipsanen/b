@@ -1,7 +1,6 @@
 #pragma once
 #include "tier1/utlmemory.h"
 
-using namespace bob;
 
 namespace bob
 {
@@ -147,3 +146,5 @@ namespace bob
 		return Length() == 0;
 	}
 }
+
+using namespace bob;

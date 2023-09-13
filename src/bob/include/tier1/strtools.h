@@ -16,8 +16,6 @@
 #include <string.h>
 #include <stdlib.h>
 
-using namespace bob;
-
 namespace bob
 {
 	#ifdef _WIN64
@@ -895,3 +893,5 @@ namespace bob
 
 	#endif // !defined( VSTDLIB_DLL_EXPORT )
 }
+
+using namespace bob;

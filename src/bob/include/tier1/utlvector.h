@@ -7,8 +7,6 @@
 	#include "tier1/utlblockmemory.h"
 	#include "tier1/strtools.h"
 
-	using namespace bob;
-
 	namespace bob
 	{
 	#define FOR_EACH_VEC( vecName, iteratorName ) \
@@ -777,3 +775,5 @@
 	}
 	#endif // DBGFLAG_VALIDATE
 }
+
+using namespace bob;

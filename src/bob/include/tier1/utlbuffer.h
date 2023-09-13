@@ -4,8 +4,6 @@
 #include "tier1/utlmemory.h"
 #include <stdarg.h>
 
-using namespace bob;
-
 namespace bob
 {
 		//-----------------------------------------------------------------------------
@@ -963,3 +961,5 @@ namespace bob
 		m_Memory.Purge();
 	}
 }
+
+using namespace bob;

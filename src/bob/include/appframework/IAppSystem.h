@@ -107,3 +107,5 @@ namespace bob
     };
 
 }
+
+using namespace bob;

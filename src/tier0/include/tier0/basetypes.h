@@ -3,7 +3,7 @@
 #include <cstdint>
 #include <cmath>
 
-namespace bob
+namespace tier0
 {
 	typedef float vec_t;
 	typedef uint8_t byte;
@@ -16,4 +16,4 @@ namespace bob
 	inline bool IsFinite(float f) { return std::isfinite(f); }
 }
 
-using namespace bob;
+using namespace tier0;

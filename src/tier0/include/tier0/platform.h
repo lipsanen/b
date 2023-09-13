@@ -2,7 +2,7 @@
 
 #include <algorithm>
 
-namespace bob
+namespace tier0
 {
 	inline void Error(const char* msg)
 	{
@@ -43,4 +43,4 @@ namespace bob
 	}
 }
 
-using namespace bob;
+using namespace tier0;

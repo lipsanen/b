@@ -628,3 +628,5 @@ namespace bob
 																	\
 		CCommandMemberInitializer_##_funcname m_##_funcname##_register;
 }
+
+using namespace bob;

@@ -25,3 +25,5 @@ namespace bob
 	//-----------------------------------------------------------------------------
 	#define IN_CHARACTERSET( SetBuffer, character )		((SetBuffer).set[(character)])
 }
+
+using namespace bob;

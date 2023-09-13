@@ -86,3 +86,5 @@ namespace bob
         virtual void			OnQueryCvarValueFinished( QueryCvarCookie_t iCookie, edict_t *pPlayerEntity, EQueryCvarValueStatus eStatus, const char *pCvarName, const char *pCvarValue ) = 0;
     };
 }
+
+using namespace bob;

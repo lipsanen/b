@@ -75,3 +75,5 @@ namespace bob
     //-----------------------------------------------------------------------------
     typedef void ( *FnChangeCallback_t )( IConVar *var, const char *pOldValue, float flOldValue );
 }
+
+using namespace bob;
