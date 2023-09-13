@@ -1,6 +1,6 @@
 #pragma once
 
-#include "osplib/utils.h"
+#include "tier0/dbg.h"
 
 namespace bob
 {
@@ -178,7 +178,7 @@ namespace bob
 		if ( m_fStateFlags & FL_FULL_EDICT_CHANGED )
 			return;
 
-		OSP_ASSERT(false, "CBaseEdict::StateChanged is not implemented!");
+		Assert(false);
 	}
 
 	inline void CBaseEdict::SetFree()
@@ -231,14 +231,14 @@ namespace bob
 	{
 		if ( !m_pUnk )
 			return 0;
-		OSP_ASSERT(false, "CBaseEdict::GetClassName not implemented");
+		Assert(false);
 	}
 
 	inline const char *	CBaseEdict::GetClassName() const
 	{
 		if ( !m_pUnk )
 			return "";
-		OSP_ASSERT(false, "CBaseEdict::GetClassName not implemented");
+		Assert(false);
 	}
 
 	inline void CBaseEdict::SetChangeInfo( unsigned short info )

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "osplib/utils.h"
 #include "tier0/platform.h"
 
 #include <cstdint>

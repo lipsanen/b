@@ -1,7 +1,6 @@
 #pragma once
 
 #include <cstddef>
-#include "osplib/utils.h"
 #include "tier1/convar.h"
 #include "edict.h"
 

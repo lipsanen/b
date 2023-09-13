@@ -15,7 +15,7 @@ target_include_directories(tier0 PUBLIC tier0/include)
 
 add_library(bob STATIC bob/cvar.cpp bob/interface_connect.cpp bob/strtools.cpp bob/utlbuffer.cpp bob/utlstring.cpp)
 target_include_directories(bob PUBLIC bob/include)
-target_link_libraries(bob PUBLIC osplib mathlib tier0)
+target_link_libraries(bob PUBLIC mathlib tier0)
 
 add_library(ob_plugin STATIC ob_plugin/plugin.cpp)
 target_include_directories(bob PUBLIC ob_plugin/include)

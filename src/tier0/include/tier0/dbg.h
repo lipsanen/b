@@ -1,9 +1,12 @@
 #pragma once
 
+#include <cassert>
+
 namespace tier0
 {
-    typedef int(*PrintFunc)(const char* msg, ...);
+    typedef void(*PrintFunc)(const char* msg, ...);
 
+    #define Assert(x) assert(x)
     extern PrintFunc AssertMsg;
     extern PrintFunc ConMsg;
     extern PrintFunc Msg;
