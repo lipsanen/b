@@ -3,9 +3,9 @@
 	#include <string.h>
 	#include "tier0/platform.h"
 	#include "tier0/threadtools.h"
-	#include "tier1/utlmemory.h"
-	#include "tier1/utlblockmemory.h"
-	#include "tier1/strtools.h"
+	#include "bipe/tier1/utlmemory.h"
+	#include "bipe/tier1/utlblockmemory.h"
+	#include "bipe/tier1/strtools.h"
 
 	namespace bipe
 	{

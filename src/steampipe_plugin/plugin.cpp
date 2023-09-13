@@ -1,5 +1,5 @@
 #include "steampipe_plugin/plugin.h"
-#include "engine/iserverplugin.h"
+#include "bipe/engine/iserverplugin.h"
 #include "bipe/interface.hpp"
 
 class SteampipePlugin : public IServerPluginCallbacks

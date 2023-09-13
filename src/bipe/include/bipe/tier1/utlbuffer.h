@@ -1,10 +1,10 @@
 #pragma once
 
 #include "mathlib/mathlib.h"
-#include "tier1/utlmemory.h"
+#include "bipe/tier1/utlmemory.h"
 #include <stdarg.h>
 
-namespace bob
+namespace bipe
 {
 		//-----------------------------------------------------------------------------
 	// Forward declarations
@@ -962,4 +962,4 @@ namespace bob
 	}
 }
 
-using namespace bob;
+using namespace bipe;

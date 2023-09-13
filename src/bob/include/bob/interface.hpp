@@ -1,6 +1,6 @@
 #pragma once
 
-#include "tier1/interface.h"
+#include "bob/tier1/interface.h"
 
 namespace bob
 {

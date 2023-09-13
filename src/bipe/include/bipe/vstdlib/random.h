@@ -1,11 +1,11 @@
 #pragma once
 
 #include <cstddef>
-#include "tier1/threadtools.h"
+#include "bipe/tier1/threadtools.h"
 
-using namespace bob;
+using namespace bipe;
 
-namespace bob
+namespace bipe
 {
 		class IUniformRandomStream
 	{
@@ -72,4 +72,4 @@ namespace bob
 	int RandomInt( int iMinVal, int iMaxVal );
 }
 
-using namespace bob;
+using namespace bipe;

@@ -1,8 +1,8 @@
 #pragma once
 
 #include <cstddef>
-#include "tier1/convar.h"
-#include "edict.h"
+#include "bipe/tier1/convar.h"
+#include "bipe/edict.h"
 
 namespace bipe
 {

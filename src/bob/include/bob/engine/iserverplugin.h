@@ -1,8 +1,8 @@
 #pragma once
 
 #include <cstddef>
-#include "tier1/convar.h"
-#include "edict.h"
+#include "bob/tier1/convar.h"
+#include "bob/edict.h"
 
 namespace bob
 {

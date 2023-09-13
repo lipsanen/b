@@ -1,6 +1,6 @@
 #pragma once
 
-#include "tier1/interface.h"
+#include "bipe/tier1/interface.h"
 
 namespace bipe
 {

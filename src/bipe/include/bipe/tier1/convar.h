@@ -1,8 +1,8 @@
 #pragma once
 
 #include <cstddef>
-#include "tier1/utlstring.h"
-#include "tier1/utlvector.h"
+#include "bipe/tier1/utlstring.h"
+#include "bipe/tier1/utlvector.h"
 
 #define FORCEINLINE_CVAR inline
 

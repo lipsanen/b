@@ -1,6 +1,6 @@
 #include "bipe/interface.hpp"
-#include "tier1/convar.h"
-#include "icvar.h"
+#include "bipe/tier1/convar.h"
+#include "bipe/icvar.h"
 
 void bipe::ConnectInterfaces(CreateInterfaceFn interfaceFactory, CreateInterfaceFn gameServerFactory)
 {

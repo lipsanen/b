@@ -1,6 +1,6 @@
 #include "bob/interface.hpp"
-#include "tier1/convar.h"
-#include "icvar.h"
+#include "bob/tier1/convar.h"
+#include "bob/icvar.h"
 
 void bob::ConnectInterfaces(CreateInterfaceFn interfaceFactory, CreateInterfaceFn gameServerFactory)
 {

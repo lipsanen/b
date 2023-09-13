@@ -5,8 +5,8 @@
 //=============================================================================
 
 #include <cstdio>
-#include "tier1/utlstring.h"
-#include "tier1/strtools.h"
+#include "bipe/tier1/utlstring.h"
+#include "bipe/tier1/strtools.h"
 
 
 //-----------------------------------------------------------------------------

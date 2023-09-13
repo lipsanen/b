@@ -2,9 +2,9 @@
 
 #include "tier0/dbg.h"
 #include "tier0/platform.h"
-#include "tier1/strtools.h"
+#include "bipe/tier1/strtools.h"
 
-namespace bob
+namespace bipe
 {
     //-----------------------------------------------------------------------------
     // Forward declarations
@@ -76,4 +76,4 @@ namespace bob
     typedef void ( *FnChangeCallback_t )( IConVar *var, const char *pOldValue, float flOldValue );
 }
 
-using namespace bob;
+using namespace bipe;

@@ -16,7 +16,6 @@ target_include_directories(tier0 PUBLIC tier0/include)
 # Orangebox
 add_library(bob STATIC bob/cvar.cpp bob/interface_connect.cpp bob/strtools.cpp bob/utlbuffer.cpp bob/utlstring.cpp)
 target_include_directories(bob PUBLIC bob/include)
-target_include_directories(bob PRIVATE bob/include/bob)
 target_link_libraries(bob PUBLIC mathlib tier0)
 
 add_library(ob_plugin STATIC ob_plugin/plugin.cpp)
@@ -26,7 +25,6 @@ target_link_libraries(ob_plugin PUBLIC bob)
 # Steampipe
 add_library(bipe STATIC bipe/cvar.cpp bipe/interface_connect.cpp bipe/strtools.cpp bipe/utlbuffer.cpp bipe/utlstring.cpp)
 target_include_directories(bipe PUBLIC bipe/include)
-target_include_directories(bipe PRIVATE bipe/include/bipe)
 target_link_libraries(bipe PUBLIC mathlib tier0)
 
 add_library(steampipe_plugin STATIC steampipe_plugin/plugin.cpp)

@@ -1,5 +1,5 @@
 #include "ob_plugin/plugin.h"
-#include "engine/iserverplugin.h"
+#include "bob/engine/iserverplugin.h"
 #include "bob/interface.hpp"
 
 class OBPlugin : public IServerPluginCallbacks

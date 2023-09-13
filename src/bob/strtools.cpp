@@ -1,4 +1,4 @@
-#include "tier1/strtools.h"
+#include "bob/tier1/strtools.h"
 
 //-----------------------------------------------------------------------------
 // Finds a string in another string with a case insensitive test w/ length validation
