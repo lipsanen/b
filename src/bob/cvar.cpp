@@ -9,12 +9,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "icvar.h"
+#include "tier1/characterset.h"
 #include "tier0/dbg.h"
 #include "tier1/convar.h"
 #include "tier1/strtools.h"
 #include "tier1/utlbuffer.h"
 
-static int s_nDLLIdentifier = 314;
+int bob::s_nDLLIdentifier = 314;
+ICvar* bob::g_pCVar = nullptr;
 
 //-----------------------------------------------------------------------------
 // Purpose: Default constructor
@@ -199,16 +202,12 @@ bool ConCommandBase::IsRegistered( void ) const
 //-----------------------------------------------------------------------------
 // Global methods
 //-----------------------------------------------------------------------------
-struct characterset_t
-{
-	char set[256];
-};
 
 static characterset_t s_BreakSet;
 static bool s_bBuiltBreakSet = false;
 
 //-----------------------------------------------------------------------------
-void CharacterSetBuild( characterset_t *pSetBuffer, const char *pszSetString )
+void bob::CharacterSetBuild( characterset_t *pSetBuffer, const char *pszSetString )
 {
 	int i = 0;
 

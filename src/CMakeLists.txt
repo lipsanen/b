@@ -7,9 +7,12 @@ list(APPEND PLUGIN_SOURCES
 add_library(osplib osplib/utils.cpp)
 target_include_directories(osplib PUBLIC osplib/include)
 
-add_library(oblib oblib/cvar.cpp oblib/strtools.cpp oblib/utlbuffer.cpp oblib/utlstring.cpp)
-target_include_directories(oblib PUBLIC oblib/include)
-target_link_libraries(oblib PUBLIC osplib)
+add_library(mathlib INTERFACE)
+target_include_directories(mathlib INTERFACE mathlib/include)
+
+add_library(bob STATIC bob/cvar.cpp bob/interface_connect.cpp bob/strtools.cpp bob/utlbuffer.cpp bob/utlstring.cpp)
+target_include_directories(bob PUBLIC bob/include)
+target_link_libraries(bob PUBLIC osplib mathlib)
 
 add_library(osp SHARED plugin.cpp)
-target_link_libraries(osp PUBLIC osplib oblib)
+target_link_libraries(osp PUBLIC osplib bob)

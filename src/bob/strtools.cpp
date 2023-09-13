@@ -3,7 +3,7 @@
 //-----------------------------------------------------------------------------
 // Finds a string in another string with a case insensitive test w/ length validation
 //-----------------------------------------------------------------------------
-char const* V_strnistr( char const* pStr, char const* pSearch, int n )
+char const* bob::V_strnistr( char const* pStr, char const* pSearch, int n )
 {
 	if (!pStr || !pSearch) 
 		return 0;
@@ -53,7 +53,7 @@ char const* V_strnistr( char const* pStr, char const* pSearch, int n )
 	return 0;
 }
 
-const char* V_strnchr( const char* pStr, char c, int n )
+const char* bob::V_strnchr( const char* pStr, char c, int n )
 {
 	char const* pLetter = pStr;
 	char const* pLast = pStr + n;
