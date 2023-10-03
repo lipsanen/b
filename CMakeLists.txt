@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
-project(osp VERSION 1.0.0)
+project(b VERSION 1.0.0)
 
 set(gcc_like_cxx "$<COMPILE_LANG_AND_ID:CXX,ARMClang,AppleClang,Clang,GNU,LCC>")
 set(DEBUG_BUILD "$<CONFIG:Debug>")
@@ -9,6 +9,8 @@ add_link_options(-m32)
 
 if(gcc_like_cxx)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON CACHE INTERNAL "")
+add_compile_options(-fdata-sections -ffunction-sections)
+add_link_options(-Wl,--gc-sections)
 endif()
 
 add_subdirectory(src)
