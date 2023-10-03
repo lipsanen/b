@@ -83,6 +83,10 @@ namespace bob
         // iCookie is the value returned by IServerPluginHelpers::StartQueryCvarValue.
         // Added with version 2 of the interface.
         virtual void			OnQueryCvarValueFinished( QueryCvarCookie_t iCookie, edict_t *pPlayerEntity, EQueryCvarValueStatus eStatus, const char *pCvarName, const char *pCvarValue ) = 0;
+    
+        // These two are actually steampipe only, but just putting them here as well for convenience
+        virtual void OnEdictAllocated( edict_t *edict ) = 0;
+        virtual void OnEdictFreed(const edict_t *edict ) = 0;	
     };
 }
 
