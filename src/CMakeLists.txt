@@ -4,8 +4,9 @@ list(APPEND PLUGIN_SOURCES
  "plugin.cpp"
 )
 
-add_library(osplib osplib/utils.cpp)
-target_include_directories(osplib PUBLIC osplib/include)
+list(APPEND COMMON_PLUGIN_SOURCES
+ "bcommon/feature.cpp"
+)
 
 add_library(mathlib INTERFACE)
 target_include_directories(mathlib INTERFACE mathlib/include)
@@ -18,8 +19,10 @@ add_library(bob STATIC bob/cvar.cpp bob/interface_connect.cpp bob/strtools.cpp b
 target_include_directories(bob PUBLIC bob/include)
 target_link_libraries(bob PUBLIC mathlib tier0)
 
-add_library(ob_plugin STATIC ob_plugin/plugin.cpp)
-target_include_directories(ob_plugin PUBLIC ob_plugin/include)
+add_library(ob_plugin STATIC ob_plugin/plugin.cpp ${COMMON_PLUGIN_SOURCES})
+target_include_directories(ob_plugin PUBLIC ob_plugin/include bcommon/include)
+target_compile_definitions(ob_plugin PRIVATE bcommon=bcommon_ob)
+target_compile_definitions(ob_plugin PUBLIC SSDK2007)
 target_link_libraries(ob_plugin PUBLIC bob)
 
 # Steampipe
@@ -27,8 +30,10 @@ add_library(bipe STATIC bipe/cvar.cpp bipe/interface_connect.cpp bipe/strtools.c
 target_include_directories(bipe PUBLIC bipe/include)
 target_link_libraries(bipe PUBLIC mathlib tier0)
 
-add_library(steampipe_plugin STATIC steampipe_plugin/plugin.cpp)
-target_include_directories(steampipe_plugin PUBLIC steampipe_plugin/include)
+add_library(steampipe_plugin STATIC steampipe_plugin/plugin.cpp ${COMMON_PLUGIN_SOURCES})
+target_include_directories(steampipe_plugin PUBLIC steampipe_plugin/include bcommon/include)
+target_compile_definitions(steampipe_plugin PRIVATE bcommon=bcommon_steampipe)
+target_compile_definitions(steampipe_plugin PUBLIC STEAMPIPE)
 target_link_libraries(steampipe_plugin PUBLIC bipe)
 
 add_library(bp SHARED plugin.cpp)

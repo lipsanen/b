@@ -1,5 +1,6 @@
 #include "ob_plugin/plugin.h"
 #include "steampipe_plugin/plugin.h"
+#include "bcommon/feature.h"
 #include <cstring>
 
 extern "C" void* CreateInterface(const char *pName, int *pReturnCode) {

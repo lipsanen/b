@@ -1,6 +1,7 @@
 #include "ob_plugin/plugin.h"
 #include "bob/engine/iserverplugin.h"
 #include "bob/interface.hpp"
+#include "bcommon/feature.h"
 
 class OBPlugin : public IServerPluginCallbacks
 {
@@ -53,4 +54,9 @@ PLUGIN_RESULT OBPlugin::ClientCommand( edict_t *pEntity, const CCommand &args )
 PLUGIN_RESULT OBPlugin::NetworkIDValidated( const char *pszUserName, const char *pszNetworkID )
 {
     return PLUGIN_CONTINUE;
+}
+
+int getOBVersionCode()
+{
+    return bcommon::getVersionCode();
 }

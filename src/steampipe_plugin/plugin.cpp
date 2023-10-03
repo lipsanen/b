@@ -1,6 +1,7 @@
 #include "steampipe_plugin/plugin.h"
 #include "bipe/engine/iserverplugin.h"
 #include "bipe/interface.hpp"
+#include "bcommon/feature.h"
 
 class SteampipePlugin : public IServerPluginCallbacks
 {
@@ -55,4 +56,9 @@ PLUGIN_RESULT SteampipePlugin::ClientCommand( edict_t *pEntity, const CCommand &
 PLUGIN_RESULT SteampipePlugin::NetworkIDValidated( const char *pszUserName, const char *pszNetworkID )
 {
     return PLUGIN_CONTINUE;
+}
+
+int getSteampipeVersionCode()
+{
+    return bcommon::getVersionCode();
 }
