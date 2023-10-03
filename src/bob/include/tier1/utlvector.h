@@ -3,9 +3,9 @@
 	#include <string.h>
 	#include "tier0/platform.h"
 	#include "tier0/threadtools.h"
-	#include "bob/tier1/utlmemory.h"
-	#include "bob/tier1/utlblockmemory.h"
-	#include "bob/tier1/strtools.h"
+	#include "tier1/utlmemory.h"
+	#include "tier1/utlblockmemory.h"
+	#include "tier1/strtools.h"
 
 	namespace bob
 	{

@@ -1,8 +1,8 @@
 #pragma once
 
-#include "bob/tier1/interface.h"
+#include "tier1/interface.h"
 
-namespace bob
+namespace bipe
 {
     //-----------------------------------------------------------------------------
     // Client systems are singleton objects in the client codebase responsible for
@@ -108,4 +108,4 @@ namespace bob
 
 }
 
-using namespace bob;
+using namespace bipe;

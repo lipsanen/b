@@ -5,8 +5,8 @@
 //=============================================================================
 
 #include <cstdio>
-#include "bob/tier1/utlstring.h"
-#include "bob/tier1/strtools.h"
+#include "tier1/utlstring.h"
+#include "tier1/strtools.h"
 
 
 //-----------------------------------------------------------------------------

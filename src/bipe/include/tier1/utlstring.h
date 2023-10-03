@@ -1,5 +1,5 @@
 #pragma once
-#include "bipe/tier1/utlmemory.h"
+#include "tier1/utlmemory.h"
 
 
 namespace bipe

@@ -9,12 +9,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "bipe/icvar.h"
-#include "bipe/tier1/characterset.h"
+#include "icvar.h"
+#include "tier1/characterset.h"
 #include "tier0/dbg.h"
-#include "bipe/tier1/convar.h"
-#include "bipe/tier1/strtools.h"
-#include "bipe/tier1/utlbuffer.h"
+#include "tier1/convar.h"
+#include "tier1/strtools.h"
+#include "tier1/utlbuffer.h"
 
 int bipe::s_nDLLIdentifier = 314;
 ICvar* bipe::g_pCVar = nullptr;

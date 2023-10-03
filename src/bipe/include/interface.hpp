@@ -1,10 +1,11 @@
 #pragma once
 
-#include "bob/tier1/interface.h"
+#include "tier1/interface.h"
 
-namespace bob
+namespace bipe
 {
     void ConnectInterfaces(CreateInterfaceFn interfaceFactory, CreateInterfaceFn gameServerFactory);
+    int sdk_version();
 }
 
-using namespace bob;
+using namespace bipe;

@@ -8,14 +8,14 @@
 
 #pragma warning (disable : 4514)
 
-#include "bob/tier1/utlbuffer.h"
+#include "tier1/utlbuffer.h"
 #include <stdio.h>
 #include <stdarg.h>
 #include <ctype.h>
 #include <stdlib.h>
 #include <limits.h>
-#include "bob/tier1/strtools.h"
-#include "bob/tier1/characterset.h"
+#include "tier1/strtools.h"
+#include "tier1/characterset.h"
 
 
 namespace bob

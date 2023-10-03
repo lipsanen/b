@@ -1,9 +1,9 @@
 #pragma once
 
 #include "appframework/IAppSystem.h"
-#include "bob/tier1/iconvar.h"
+#include "tier1/iconvar.h"
 
-namespace bob
+namespace bipe
 {
     class ConCommandBase;
     class ConCommand;
@@ -106,4 +106,4 @@ namespace bob
     extern ICvar *g_pCVar;
 }
 
-using namespace bob;
+using namespace bipe;
