@@ -25,7 +25,7 @@ target_include_directories(ob_plugin PRIVATE bcommon/include)
 target_compile_definitions(ob_plugin PRIVATE bcommon=bcommon_ob)
 target_include_directories(ob_plugin PUBLIC ob_plugin/include)
 target_compile_definitions(ob_plugin PUBLIC SSDK2007)
-target_link_libraries(ob_plugin PRIVATE bob)
+target_link_libraries(ob_plugin PRIVATE bob SPTLib)
 
 # Steampipe
 add_library(bipe STATIC bipe/cvar.cpp bipe/interface_connect.cpp bipe/strtools.cpp bipe/utlbuffer.cpp bipe/utlstring.cpp)
@@ -37,7 +37,7 @@ target_include_directories(steampipe_plugin PRIVATE bcommon/include)
 target_compile_definitions(steampipe_plugin PRIVATE bcommon=bcommon_steampipe)
 target_include_directories(steampipe_plugin PUBLIC steampipe_plugin/include)
 target_compile_definitions(steampipe_plugin PUBLIC STEAMPIPE)
-target_link_libraries(steampipe_plugin PRIVATE bipe)
+target_link_libraries(steampipe_plugin PRIVATE bipe SPTLib)
 
 add_library(bp SHARED plugin.cpp)
 target_link_libraries(bp PUBLIC ob_plugin steampipe_plugin)

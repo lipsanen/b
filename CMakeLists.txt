@@ -15,6 +15,7 @@ endif()
 
 add_subdirectory(src)
 add_subdirectory(thirdparty/googletest)
+add_subdirectory(thirdparty/SPTLib)
 add_subdirectory(tools)
 
 enable_testing()
