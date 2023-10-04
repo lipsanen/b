@@ -15,9 +15,11 @@ endif()
 
 add_subdirectory(src)
 add_subdirectory(thirdparty/googletest)
+add_subdirectory(thirdparty/nlohmann)
 add_subdirectory(thirdparty/SPTLib)
 add_subdirectory(tools)
 
 enable_testing()
 add_subdirectory(test/bdemo_tests)
 add_subdirectory(test/plugin_tests)
+add_subdirectory(test/sptlib_tests)

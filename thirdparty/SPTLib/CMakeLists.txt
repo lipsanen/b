@@ -5,6 +5,7 @@ list(APPEND SPTLIB_SOURCES
     "IHookableNameFilter.cpp"
     "IHookableNameFilterOrdered.cpp"
     "MemUtils.cpp"
+    "Patterns.cpp"
     "sptlib.cpp"
 )
 

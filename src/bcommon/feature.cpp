@@ -282,7 +282,7 @@ void ModuleHookData::InitModule(const std::wstring& moduleName)
 			       Convert(moduleName).c_str(),
 			       modulePattern.patternName,
 			       *modulePattern.origPtr,
-			       foundPattern->name());
+			       foundPattern->name.c_str());
 			patternIndices[reinterpret_cast<uintptr_t>(modulePattern.origPtr)] =
 			    foundPattern - modulePattern.patternArr;
 		}
