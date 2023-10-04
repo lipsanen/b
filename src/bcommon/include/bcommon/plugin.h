@@ -4,6 +4,8 @@
 
 namespace bcommon
 {
+    int getVersionCode();
+
     class Plugin : public IServerPluginCallbacks
     {
     public:

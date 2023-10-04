@@ -1,5 +1,4 @@
 #include "steampipe_plugin/plugin.h"
-#include "bcommon/feature.h"
 #include "bcommon/plugin.h"
 
 static bcommon::Plugin plugin;

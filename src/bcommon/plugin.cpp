@@ -1,6 +1,13 @@
 #include "bcommon/plugin.h"
 #include "interface.hpp"
 
+
+// A dummy feature to test conditional compilation based on the SDK version
+int bcommon::getVersionCode()
+{
+    return sdk_version();
+}
+
 bool bcommon::Plugin::Load(CreateInterfaceFn interfaceFactory, CreateInterfaceFn gameServerFactory)
 {
     ConnectInterfaces(interfaceFactory, gameServerFactory);
